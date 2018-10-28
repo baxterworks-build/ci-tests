@@ -19,9 +19,3 @@ steps:
   inputs:
     targetType: 'inline'
     script: 'bash -lc "export"'
-
-- task: PowerShell@2
-  displayName: 'Did we have an msys2 environment all along?'
-  inputs:
-    targetType: 'inline'
-    script: 'bash -lc "pacman -Syyu"'
