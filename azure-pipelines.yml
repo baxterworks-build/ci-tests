@@ -3,11 +3,11 @@ pool:
 
 steps:
 
-# - task: PowerShell@2
-#   displayName: 'What environment variables do we have?'
-#   inputs:
-#     targetType: 'inline'
-#     script: 'gci Env: | %{write-host "$($_.Key): $($_.Value)" }'
+- task: PowerShell@2
+  displayName: 'What environment variables do we have?'
+  inputs:
+    targetType: 'inline'
+    script: 'gci Env: | %{write-host "$($_.Key): $($_.Value)" }'
 
 # - task: PowerShell@2
 #   displayName: 'Passing an environment variable to bash, maybe'
@@ -24,4 +24,5 @@ steps:
 - task: PowerShell@2
   inputs:
     targetType: 'filePath'
+    env: {"B2_KEY_ID": $(B2_KEY_ID), "B2_APPLICATION_KEY": $(B2_APPLICATION_KEY)}
     filePath: helper.ps1
