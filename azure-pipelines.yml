@@ -24,7 +24,7 @@ steps:
 - task: PowerShell@2
   inputs:
     targetType: 'filePath'
-    env: 
-      B2_KEY_ID: $(B2_KEY_ID)
-      B2_APPLICATION_KEY: $(B2_APPLICATION_KEY)
     filePath: helper.ps1
+  env: 
+    B2_KEY_ID: $(B2_KEY_ID)
+    B2_APPLICATION_KEY: $(B2_APPLICATION_KEY)
