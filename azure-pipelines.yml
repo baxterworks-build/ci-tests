@@ -6,7 +6,5 @@ steps:
   displayName: 'What environment variables do we have?'
   inputs:
     targetType: 'inline'
-      script: 'gci Env: | %{write-host "$($_.Key): $($_.Value)" }'
-      
-      write-output "Finished update?"
+    script: 'gci Env: | %{write-host "$($_.Key): $($_.Value)" }'
 
