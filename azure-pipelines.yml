@@ -1,6 +1,7 @@
 pool:
   vmImage: 'win1803'
 
+steps:
 - task: PowerShell@2
   displayName: 'What environment variables do we have?'
   inputs:
