@@ -1,3 +1,6 @@
+
+
+##Upload
 # choco install -y msys2 7zip.install
 # C:\tools\msys64\usr\bin\bash.exe -lc "pacman --noconfirm -S python mingw-w64-x86_64-toolchain gettext python3 mingw-w64-x86_64-glib2 mingw-w64-x86_64-pixman make bison mingw-w64-x86_64-diffutils mingw-w64-cross-binutils mingw-w64-x86_64-SDL2"
 
@@ -12,12 +15,13 @@
 
 
 
+##Download
+# choco install -y 7zip.install aria2
+# py -m pip install b2
+# b2 authorize-account $env:B2_KEY_ID $env:B2_APPLICATION_KEY
+# $url = b2 get-download-url-with-auth baxterworks-azure msys2_tools.7z
+# mkdir -force c:\tools; cd c:\tools
+# aria2c -x5 -j5 $url
+# 7z x msys2_tools.7z
 
-choco install -y 7zip.install aria2
-py -m pip install b2
-b2 authorize-account $env:B2_KEY_ID $env:B2_APPLICATION_KEY
-$url = b2 get-download-url-with-auth baxterworks-azure msys2_tools.7z
-mkdir -force c:\tools; cd c:\tools
-aria2c -x5 -j5 $url
-
-7z x msys2_tools.7z
+ls -R
