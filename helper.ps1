@@ -1,7 +1,7 @@
 
 
 ##Upload
-choco install -y 7zip.install
+
 # C:\tools\msys64\usr\bin\bash.exe -lc "pacman --noconfirm -S python mingw-w64-x86_64-toolchain gettext python3 mingw-w64-x86_64-glib2 mingw-w64-x86_64-pixman make bison mingw-w64-x86_64-diffutils mingw-w64-cross-binutils mingw-w64-x86_64-SDL2"
 
 Install-Module -Name PS.B2 -Force
@@ -10,11 +10,13 @@ Import-Module -Name PS.B2
 Connect-B2Cloud -AccountID $env:B2_KEY_ID -ApplicationKey $env:B2_APPLICATION_KEY
 $bucketId = (Get-B2Bucket | Where-Object -Property BucketName -eq "baxterworks-azure").BucketID
 write-host "Starting to write output.txt"
-Get-ChildItem c:\ -Recurse -Depth 1 -Directory | %{write-output $_.FullName} | Out-File -FilePath output2.txt
+Get-ChildItem c:\ -Recurse -Depth 5 -Directory | %{write-output $_.FullName} | Out-File -FilePath output3.txt
+
+choco install -y 7zip.install
 Write-Host "start compressing"
-7z a output2.7z output2.txt
+7z a output3.7z output3.txt
 Write-Host "start uploading"
-Invoke-B2ItemUpload -BucketID $bucketId -Path output2.7z
+Invoke-B2ItemUpload -BucketID $bucketId -Path output3.7z
 
 
 
