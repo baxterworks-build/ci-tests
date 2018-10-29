@@ -24,4 +24,10 @@
 # aria2c -x5 -j5 $url
 # 7z x msys2_tools.7z
 
-Get-ChildItem c:\ -Recurse -Directory | %{write-output $_.FullName}
+$initialAuth = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $env:B2_KEY_ID, $env:B2_APPLICATION_KEY)))
+
+$accountInfo = invoke-restmethod  -UserAgent "a script by voltagex@voltagex.org" -Headers @{Authorization=("Basic {0}" -f $initialAuth)} -Uri https://api.backblazeb2.com/b2api/v2/b2_authorize_account 
+
+$downloadServer = $accountInfo.downloadUrl
+$fullUrl = "{0}/baxterworks-azure/msys2_tools.7z" -f $accountInfo.downloadUrl
+aria2c.exe --header="Authorization: $($accountInfo)" -x4 -j4 $fullUrl
