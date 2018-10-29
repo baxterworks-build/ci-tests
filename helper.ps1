@@ -17,7 +17,7 @@ choco install -y 7zip.install aria2
 py -m pip install b2
 b2 authorize-account $env:B2_KEY_ID $env:B2_APPLICATION_KEY
 $url = b2 get-download-url-with-auth baxterworks-azure msys2_tools.7z
-mkdir c:\tools; cd c:\tools
+mkdir -force c:\tools; cd c:\tools
 aria2 -x5 -j5 $url
 
 7z x msys2_tools.7z
