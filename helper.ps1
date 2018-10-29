@@ -10,11 +10,11 @@ Import-Module -Name PS.B2
 Connect-B2Cloud -AccountID $env:B2_KEY_ID -ApplicationKey $env:B2_APPLICATION_KEY
 $bucketId = (Get-B2Bucket | Where-Object -Property BucketName -eq "baxterworks-azure").BucketID
 write-host "Starting to write output.txt"
-gci c:\ -recurse -Directory | %{write-output $_.FullName} | Out-File -FilePath output.txt
+Get-ChildItem c:\ -Recurse -Depth 1 -Directory | %{write-output $_.FullName} | Out-File -FilePath output2.txt
 Write-Host "start compressing"
-7z a output.7z output.txt
+7z a output2.7z output2.txt
 Write-Host "start uploading"
-Invoke-B2ItemUpload -BucketID $bucketId -Path output.7z
+Invoke-B2ItemUpload -BucketID $bucketId -Path output2.7z
 
 
 
