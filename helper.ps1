@@ -24,4 +24,4 @@
 # aria2c -x5 -j5 $url
 # 7z x msys2_tools.7z
 
-ls -R
+ls -R C:\
