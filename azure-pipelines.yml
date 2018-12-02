@@ -1,7 +1,15 @@
 pool:
   vmImage: 'Ubuntu 16.04'
 
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: uname -a
+steps:
+- bash: 'uname -a'
+  displayName: uname
+
+- bash: cpuinfo
+  displayName: cat /proc/cpuinfo
+
+- bash: nproc
+  displayName: nproc
+
+- bash: gcc
+  displayName: gcc -v
