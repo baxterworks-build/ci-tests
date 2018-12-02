@@ -2,7 +2,6 @@ pool:
   vmImage: 'Ubuntu 16.04'
 
 - task: Bash@3
-  displayName: "uname"
   inputs:
     targetType: 'inline'
     script: uname -a
