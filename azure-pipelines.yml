@@ -11,5 +11,5 @@ steps:
 - bash: nproc
   displayName: nproc
 
-- bash: gcc
-  displayName: gcc -v
+- bash: gcc -v
+  displayName: gcc version
