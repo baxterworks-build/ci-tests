@@ -1,30 +1,10 @@
 pool:
-  vmImage: 'vs2017-win2016'
+  vmImage: 'Ubuntu 16.04'
 
 steps:
+- task: Bash@3
+  displayName: 'uname'
+    inputs:
+      targetType: 'inline'
+      script: 'uname -a'
 
-# - task: PowerShell@2
-#   displayName: 'What environment variables do we have?'
-#   inputs:
-#     targetType: 'inline'
-#     script: 'gci Env: | %{write-host "$($_.Key): $($_.Value)" }'
-
-# - task: PowerShell@2
-#   displayName: 'Passing an environment variable to bash, maybe'
-#   inputs:
-#     targetType: 'inline'
-#     script: 'bash -lc "echo bash says that AGENT_MACHINENAME is $AGENT_MACHINENAME" '
-
-# - task: PowerShell@2
-#   displayName: 'What variables are inside of bash?'
-#   inputs:
-#     targetType: 'inline'
-#     script: 'bash -lc "export"'
-
-- task: PowerShell@2
-  inputs:
-    targetType: 'filePath'
-    filePath: helper.ps1
-  env: 
-    B2_KEY_ID: $(B2_KEY_ID)
-    B2_APPLICATION_KEY: $(B2_APPLICATION_KEY)
