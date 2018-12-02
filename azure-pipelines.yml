@@ -5,8 +5,8 @@ steps:
 - bash: 'uname -a'
   displayName: uname
 
-- bash: cpuinfo
-  displayName: cat /proc/cpuinfo
+- bash: cat /proc/cpuinfo
+  displayName: cpuinfo
 
 - bash: nproc
   displayName: nproc
