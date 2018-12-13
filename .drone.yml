@@ -1,0 +1,10 @@
+kind: pipeline
+name: default
+
+steps:
+- name: frontend
+  image: ubuntu:latest
+  commands:
+  - ./test.sh
+
+# Build, damnit
