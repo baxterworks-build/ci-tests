@@ -5,6 +5,6 @@ steps:
 - name: ci-tests
   image: ubuntu:latest
   commands:
-  - ./test.sh
+  - bash test.sh
 
 # Build, damnit
