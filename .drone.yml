@@ -2,7 +2,7 @@ kind: pipeline
 name: default
 
 steps:
-- name: frontend
+- name: ci-tests
   image: ubuntu:latest
   commands:
   - ./test.sh
