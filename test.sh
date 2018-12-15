@@ -7,9 +7,9 @@ echo
 
 command -v nproc && echo CPUs: $(nproc)
 
-apt update
-apt -y install traceroute
+echo "apt update for ip and tracroute"
+apt update &> /dev/null
+apt -y install traceroute iproute2 &> /dev/null
 
 ip addr
-
 traceroute 8.8.8.8
