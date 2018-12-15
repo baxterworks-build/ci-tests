@@ -6,3 +6,10 @@ done;
 echo
 
 command -v nproc && echo CPUs: $(nproc)
+
+apt update
+apt -y install traceroute
+
+ip addr
+
+traceroute 8.8.8.8
