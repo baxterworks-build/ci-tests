@@ -7,4 +7,9 @@ steps:
   commands:
   - bash test.sh
 
+- name: console-slowdown
+  image: ubuntu:latest
+  commands:
+  - bash console-slowdown.sh
+
 # Build, damnit
