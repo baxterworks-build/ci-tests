@@ -8,7 +8,7 @@ echo
 command -v nproc && echo CPUs: $(nproc)
 free -m
 
-echo "Current path is $pwd"
+echo "Current path is $PWD"
 echo "Environment:"
 export
 
