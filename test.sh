@@ -7,6 +7,8 @@ echo
 
 command -v nproc && echo CPUs: $(nproc)
 
+free -m
+
 echo "apt update for traceroute"
 apt update &> /dev/null
 apt -y install traceroute iproute2 &> /dev/null
