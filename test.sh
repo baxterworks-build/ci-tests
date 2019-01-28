@@ -6,8 +6,11 @@ done;
 echo
 
 command -v nproc && echo CPUs: $(nproc)
-
 free -m
+
+echo "Current path is $pwd"
+echo "Environment:"
+export
 
 echo "apt update for traceroute"
 apt update &> /dev/null
