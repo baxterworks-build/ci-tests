@@ -8,13 +8,16 @@ echo
 command -v nproc && echo CPUs: $(nproc)
 free -m
 
+echo whoami? $(whoami)
+sudo -nv || echo sudo unavailable
+echo
 echo "Current path is $PWD"
 echo "Environment:"
 export
 
 echo "apt update for traceroute"
-apt update
-apt -y install traceroute iproute2
+apt update || echo apt update unavailable
+apt -y install traceroute iproute2 || echo apt install unavailable
 
 echo
 echo
