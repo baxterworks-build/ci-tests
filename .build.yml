@@ -1,0 +1,4 @@
+image: debian/testing
+tasks:
+- run-tests: |
+   bash test.sh
