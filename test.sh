@@ -13,8 +13,9 @@ echo "Environment:"
 export
 
 echo "apt update for traceroute"
-apt update &> /dev/null
-apt -y install traceroute iproute2 &> /dev/null
+apt update
+apt -y install traceroute iproute2
 
 echo
-traceroute 8.8.8.8
+echo
+traceroute 8.8.8.8 || echo traceroute not found
