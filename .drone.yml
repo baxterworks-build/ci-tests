@@ -7,7 +7,9 @@ steps:
   commands:
   - bash test.sh
 
-- name: might-be-skipped
+- name: console-slowdown
   image: ubuntu:latest
   commands:
-    - echo this shouldn't run
+  - bash console-slowdown.sh
+
+# Build, damnit

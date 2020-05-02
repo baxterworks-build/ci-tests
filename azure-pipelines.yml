@@ -1,0 +1,15 @@
+pool:
+  vmImage: 'Ubuntu 16.04'
+
+steps:
+- bash: 'uname -a'
+  displayName: uname
+
+- bash: cat /proc/cpuinfo
+  displayName: cpuinfo
+
+- bash: nproc
+  displayName: nproc
+
+- bash: gcc -v
+  displayName: gcc version
