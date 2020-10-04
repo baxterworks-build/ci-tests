@@ -15,12 +15,14 @@ echo "Current path is $PWD"
 echo "Environment:"
 export
 
-echo "apt update for traceroute"
-apt update || echo apt update unavailable
-apt -y install traceroute iproute2 || echo apt install unavailable
+if [ -f "/etc/debian_version" ]; then
+    echo "apt update for traceroute"
+    apt update || echo apt update unavailable
+    apt -y install traceroute iproute2 mtr-tiny || echo apt install unavailable
+    mtr -r -c 1 deb.debian.org
+    
 
-echo
-echo
-traceroute 8.8.8.8 || echo traceroute not found
-
+else
+    traceroute 8.8.8.8 || echo traceroute not found
+fi
 docker --version || echo docker unavailable

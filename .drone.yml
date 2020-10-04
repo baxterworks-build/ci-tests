@@ -3,12 +3,12 @@ name: default
 
 steps:
 - name: ci-tests
-  image: ubuntu:latest
+  image: debian:latest
   commands:
   - bash test.sh
 
 - name: console-slowdown
-  image: ubuntu:latest
+  image: debian:latest
   commands:
   - bash console-slowdown.sh
 
