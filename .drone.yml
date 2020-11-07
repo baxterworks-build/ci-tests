@@ -4,12 +4,9 @@ name: default
 steps:
 - name: ci-tests
   image: debian:latest
+  environment:
+    UPLOAD_AUTH:
+      from_secret: upload_auth
   commands:
   - bash test.sh
 
-- name: console-slowdown
-  image: debian:latest
-  commands:
-  - bash console-slowdown.sh
-
-# Build, damnit
