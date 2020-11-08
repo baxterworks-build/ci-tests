@@ -3,13 +3,6 @@ name: default
 
 steps:
 - name: ci-tests
-  image: debian:latest
+  image: fedora:latest
   commands:
   - bash test.sh
-
-- name: console-slowdown
-  image: debian:latest
-  commands:
-  - bash console-slowdown.sh
-
-# Build, damnit
