@@ -1,0 +1,10 @@
+version: 1.0.{build}
+branches:
+  only:
+  - appveyor
+
+build:
+  verbosity: minimal
+
+build_script:
+ - cmake
