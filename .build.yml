@@ -2,10 +2,11 @@
 arch: null
 environment: null
 image: debian/testing
-packages: null
+packages:
+  - mtr-tiny
 repositories: null
 secrets: null
 sources:
 - https://github.com/baxterworks-build/ci-tests
 tasks:
-- run-tests: bash ci-tests/test.sh
+- run-tests: sudo bash ci-tests/test.sh

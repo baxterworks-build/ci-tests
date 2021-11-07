@@ -1,3 +1,3 @@
-# azure-pipelines-tests
-
-Creating a readme because Azure Pipelines can't cope without an initial commit
+# CI Tests
+Noodling around with some network tests to run on CI platforms.
+Generally a junk repo and should be ignored.
